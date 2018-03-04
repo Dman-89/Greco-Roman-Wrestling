@@ -1,0 +1,330 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/rounds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_weight="1"
+            android:background="#5644FD">
+
+            <TextView
+                style="@style/rounds"
+                android:id="@+id/R1Left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="R1"
+                android:layout_weight="1" />
+
+            <TextView
+                style="@style/rounds"
+                android:id="@+id/R2Left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="R2"
+                android:layout_weight="1" />
+
+            <TextView
+                style="@style/rounds"
+                android:id="@+id/R3Left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="R3"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:layout_weight="1"
+            android:paddingBottom="8dp"
+            android:background="#FA3F30">
+
+            <TextView
+                style="@style/rounds"
+                android:id="@+id/R1Right"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="R1"
+                android:layout_weight="1" />
+
+            <TextView
+                style="@style/rounds"
+                android:id="@+id/R2Right"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="R2"
+                android:layout_weight="1" />
+
+            <TextView
+                style="@style/rounds"
+                android:id="@+id/R3Right"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="R3"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/rounds"
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/leftSide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="@drawable/bgl" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/headers"
+                        android:id="@+id/pointsHeaderBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pointsHeader" />
+
+                    <TextView
+                        style="@style/scores"
+                        android:id="@+id/pointsCountBlue"
+                        android:layout_below="@id/pointsHeaderBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/headers"
+                        android:id="@+id/admonitionsHeaderBlue"
+                        android:layout_toRightOf="@id/pointsHeaderBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/admonitionsHeader"
+                        tools:ignore="NotSibling" />
+
+                    <TextView
+                        style="@style/admolitions"
+                        android:id="@+id/admonitionsCountBlue"
+                        android:layout_below="@id/admonitionsHeaderBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+            <Button
+                style="@style/scoreButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+5 Points\n(win round)"
+                android:onClick="addFiveForBlue"/>
+
+            <Button
+                style="@style/scoreButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+3 Points"
+                android:onClick="addThreeForBlue"/>
+
+            <Button
+                style="@style/scoreButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+2 Points"
+                android:onClick="addTwoForBlue"/>
+
+            <Button
+                style="@style/scoreButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+1 point"
+                android:onClick="addOneForBlue"/>
+
+            <Button
+                style="@style/scoreButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="admonition"
+                android:onClick="admonitionBlue"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rightSide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="@drawable/bgr">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/headers"
+                        android:id="@+id/pointsHeaderRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pointsHeader" />
+
+                    <TextView
+                        style="@style/scores"
+                        android:id="@+id/pointsCountRed"
+                        android:layout_below="@id/pointsHeaderRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/headers"
+                        android:id="@+id/admonitionsHeaderRed"
+                        android:layout_toRightOf="@id/pointsHeaderRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/admonitionsHeader"
+                        tools:ignore="NotSibling" />
+
+                    <TextView
+                        style="@style/admolitions"
+                        android:id="@+id/admonitionsCountRed"
+                        android:layout_below="@id/admonitionsHeaderRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+/>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+
+
+            <Button
+                style="@style/scoreButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+5 Points\n(win round)"
+                android:onClick="addFiveForRed"/>
+
+            <Button
+                style="@style/scoreButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+3 Points"
+                android:onClick="addThreeForRed"/>
+
+            <Button
+                style="@style/scoreButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+2 Points"
+                android:onClick="addTwoForRed"/>
+
+            <Button
+                style="@style/scoreButtons"
+                android:id="@+id/onePoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+1 point"
+                android:onClick="addOneForRed"/>
+
+            <Button
+                style="@style/scoreButtons"
+                android:id="@+id/admonition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="admonition"
+                android:onClick="admonitionRed"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:text="Round end"
+        android:onClick="RoundEnd"/>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="8dp"
+        android:text="Reset"
+        android:onClick="resetContestation"/>
+
+    <View
+        android:layout_below="@id/rounds"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom ="@id/tab">
+
+    </View>
+
+</RelativeLayout>

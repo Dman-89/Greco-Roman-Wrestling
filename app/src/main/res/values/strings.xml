@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Greco-Roman Wrestling</string>
+
+    <string name="pointsHeader"><u>Points</u></string>
+    <string name="admonitionsHeader"><u>Admonitions</u></string>
+
+
+</resources>
