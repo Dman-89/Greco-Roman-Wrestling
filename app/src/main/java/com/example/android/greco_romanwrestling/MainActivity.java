@@ -9,21 +9,23 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int zeroPointsFlag = 0;
-    int roundEndEnableFlag = 0;
-    int blockFlag = 0;
+    int zeroPointsFlag = 0; // if round ends with zero points for every wrestler,
+                            // it blocks roundEnd for contestants to wrestle additional time
+    int roundEndEnableFlag = 0; // flag for "turning on" roundEnd function, needed to skip monkey clicks
+    int blockFlag = 0; // flag for all functions except roundEnd blocking, needed to skip monkey clicks
     int roundNumber = 0;
-    int pointsBlue = 0;
-    int pointsRed = 0;
-    int admonitionsBlue = 0;
-    int admonitionsRed = 0;
-    int threePointsCounterBlue = 0;
-    int threePointsCounterRed = 0;
+    int pointsBlue = 0; // round score for blue wrestler
+    int pointsRed = 0; // round score for red wrestler
+    int admonitionsBlue = 0; // contestation (not round!) admonitions for blue wrestler
+    int admonitionsRed = 0; // contestation (not round!) admonitions for red wrestler
+    int threePointsCounterBlue = 0; // if wrestler gets 2 times 3 points he wins round despite scores
+    int threePointsCounterRed = 0; // so it's counter of 3 scores times in round
     int roundsWonBlue = 0;
     int roundsWonRed = 0;
-    int lastScoreBlue = 0;
-    int lastScoreRed = 0;
+    int lastScoreBlue = 0; // if score in round and admonitions are equal, winner is the one who got
+    int lastScoreRed = 0; // last point(s) in round
 
+    // arrays needed to reset layout
     private Integer[] roundIdsBlue = {R.id.R1Left, R.id.R2Left, R.id.R3Left};
     private Integer[] roundIdsRed = {R.id.R1Right, R.id.R2Right, R.id.R3Right};
 
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    // resets everything - starts new contestation
     public void resetContestation(View view) {
         zeroPointsFlag = 0;
         roundEndEnableFlag = 0;
@@ -61,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // identifies round winner, resets variables that are targeted to track round (not contestation!) progress
     public void RoundEnd(View view) {
         if (roundEndEnableFlag == 0) {
             return;
@@ -73,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         if (!(roundsWonBlue == 2 | roundsWonRed == 2 | roundNumber > 3 | admonitionsBlue == 3 | admonitionsRed == 3)) {
 
             blockFlag = 0;
+            // conditions for proper identification of square to lighten in green as round winner
             if (pointsBlue > pointsRed) {
                 roundColorChange((TextView) findViewById(roundIdsBlue[roundNumber - 1]));
                 roundsWonBlue += 1;
@@ -92,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 roundColorChange((TextView) findViewById(roundIdsRed[roundNumber - 1]));
                 roundsWonRed += 1;
             }
-
+            // conditions above end
             pointsBlue = 0;
             pointsRed = 0;
             threePointsCounterBlue = 0;
@@ -121,14 +126,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // changes every counter visible value
     private void displayNumber(int number, TextView textview) {
         textview.setText(String.valueOf(number));
     }
 
+    // lightens square on top of round winner half
     private void roundColorChange (TextView textview) {
         textview.setBackgroundResource(R.drawable.rounded_corners_green);
     }
 
+    // explicitly tells who's the winner of contestation
     private void contestationToaster (CharSequence wrestlerColor) {
         int toastContestationDuration = Toast.LENGTH_LONG;
         Context context = getApplicationContext();
@@ -137,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
+    // adds 5 points to score of BLUE contestant, auto-win round
     public void addFiveForBlue(View view) {
         roundEndEnableFlag = 1;
         if (blockFlag == 1) {
@@ -147,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
         displayNumber(pointsBlue, (TextView) findViewById(R.id.pointsCountBlue));
     }
 
+    // adds 5 points to score of RED contestant, auto-win round
     public void addFiveForRed(View view) {
         roundEndEnableFlag = 1;
         if (blockFlag == 1) {
@@ -157,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
         displayNumber(pointsRed, (TextView) findViewById(R.id.pointsCountRed));
     }
 
+    // adds 3 points to score of BLUE contestant, auto-win round if he gets 3 points 2 times
     public void addThreeForBlue(View view) {
         roundEndEnableFlag = 1;
         if (blockFlag == 1) {
@@ -172,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // adds 3 points to score of RED contestant, auto-win round if he gets 3 points 2 times
     public void addThreeForRed(View view) {
         roundEndEnableFlag = 1;
         if (blockFlag == 1) {
@@ -187,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // adds 2 points to score of BLUE contestant
     public void addTwoForBlue(View view) {
         roundEndEnableFlag = 1;
         if (blockFlag == 1) {
@@ -201,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // adds 2 points to score of RED contestant
     public void addTwoForRed(View view) {
         roundEndEnableFlag = 1;
         if (blockFlag == 1) {
@@ -215,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // adds 1 point to score of BLUE contestant
     public void addOneForBlue(View view) {
         roundEndEnableFlag = 1;
         if (blockFlag == 1) {
@@ -229,6 +244,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // adds 1 point to score of RED contestant
     public void addOneForRed(View view) {
         roundEndEnableFlag = 1;
         if (blockFlag == 1) {
@@ -243,6 +259,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // adds 1 admonition to admonitions counter of BLUE contestant
     public void admonitionBlue (View view) {
         roundEndEnableFlag = 1;
         if (blockFlag == 1) {
@@ -257,6 +274,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // adds 1 admonition to admonitions counter of RED contestant
     public void admonitionRed (View view) {
         roundEndEnableFlag = 1;
         if (blockFlag == 1) {

@@ -13,89 +13,89 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
             android:layout_weight="1"
-            android:background="#5644FD">
+            android:background="#5644FD"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp">
 
             <TextView
-                style="@style/rounds"
                 android:id="@+id/R1Left"
+                style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="R1"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="@string/roundSquare1" />
 
             <TextView
-                style="@style/rounds"
                 android:id="@+id/R2Left"
+                style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="R2"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="@string/roundSquare2" />
 
             <TextView
-                style="@style/rounds"
                 android:id="@+id/R3Left"
+                style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="R3"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:text="@string/roundSquare3" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
             android:layout_weight="1"
+            android:background="#FA3F30"
+            android:orientation="horizontal"
             android:paddingBottom="8dp"
-            android:background="#FA3F30">
+            android:paddingTop="8dp">
 
             <TextView
-                style="@style/rounds"
                 android:id="@+id/R1Right"
+                style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="R1"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="@string/roundSquare1" />
 
             <TextView
-                style="@style/rounds"
                 android:id="@+id/R2Right"
+                style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="R2"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="@string/roundSquare2" />
 
             <TextView
-                style="@style/rounds"
                 android:id="@+id/R3Right"
+                style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="R3"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="@string/roundSquare3" />
 
         </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_below="@id/rounds"
         android:id="@+id/tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/rounds"
         android:orientation="horizontal">
 
         <LinearLayout
             android:id="@+id/leftSide"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_weight="1"
-            android:background="@drawable/bgl" >
+            android:background="@drawable/bgl"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -107,18 +107,18 @@
                     android:layout_weight="1">
 
                     <TextView
-                        style="@style/headers"
                         android:id="@+id/pointsHeaderBlue"
+                        style="@style/headers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/pointsHeader" />
 
                     <TextView
-                        style="@style/scores"
                         android:id="@+id/pointsCountBlue"
-                        android:layout_below="@id/pointsHeaderBlue"
+                        style="@style/scores"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/pointsHeaderBlue"
                         android:text="0" />
 
                 </RelativeLayout>
@@ -129,77 +129,69 @@
                     android:layout_weight="1">
 
                     <TextView
-                        style="@style/headers"
                         android:id="@+id/admonitionsHeaderBlue"
-                        android:layout_toRightOf="@id/pointsHeaderBlue"
+                        style="@style/headers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/pointsHeaderBlue"
                         android:text="@string/admonitionsHeader"
                         tools:ignore="NotSibling" />
 
                     <TextView
-                        style="@style/admolitions"
                         android:id="@+id/admonitionsCountBlue"
-                        android:layout_below="@id/admonitionsHeaderBlue"
+                        style="@style/admolitions"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/admonitionsHeaderBlue"
                         android:text="0" />
 
                 </RelativeLayout>
 
             </LinearLayout>
 
-
-
-
-
-
-
-
+            <Button
+                style="@style/scoreButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addFiveForBlue"
+                android:text="@string/points5" />
 
             <Button
                 style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+5 Points\n(win round)"
-                android:onClick="addFiveForBlue"/>
+                android:onClick="addThreeForBlue"
+                android:text="@string/points3" />
 
             <Button
                 style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+3 Points"
-                android:onClick="addThreeForBlue"/>
+                android:onClick="addTwoForBlue"
+                android:text="@string/points2" />
 
             <Button
                 style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+2 Points"
-                android:onClick="addTwoForBlue"/>
+                android:onClick="addOneForBlue"
+                android:text="@string/point1" />
 
             <Button
                 style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+1 point"
-                android:onClick="addOneForBlue"/>
-
-            <Button
-                style="@style/scoreButtons"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="admonition"
-                android:onClick="admonitionBlue"/>
+                android:onClick="admonitionBlue"
+                android:text="@string/admonition" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/rightSide"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_weight="1"
-            android:background="@drawable/bgr">
+            android:background="@drawable/bgr"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -211,18 +203,18 @@
                     android:layout_weight="1">
 
                     <TextView
-                        style="@style/headers"
                         android:id="@+id/pointsHeaderRed"
+                        style="@style/headers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/pointsHeader" />
 
                     <TextView
-                        style="@style/scores"
                         android:id="@+id/pointsCountRed"
-                        android:layout_below="@id/pointsHeaderRed"
+                        style="@style/scores"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/pointsHeaderRed"
                         android:text="0" />
 
                 </RelativeLayout>
@@ -233,64 +225,60 @@
                     android:layout_weight="1">
 
                     <TextView
-                        style="@style/headers"
                         android:id="@+id/admonitionsHeaderRed"
-                        android:layout_toRightOf="@id/pointsHeaderRed"
+                        style="@style/headers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/pointsHeaderRed"
                         android:text="@string/admonitionsHeader"
                         tools:ignore="NotSibling" />
 
                     <TextView
-                        style="@style/admolitions"
                         android:id="@+id/admonitionsCountRed"
-                        android:layout_below="@id/admonitionsHeaderRed"
+                        style="@style/admolitions"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="0"
-/>
+                        android:layout_below="@id/admonitionsHeaderRed"
+                        android:text="0" />
                 </RelativeLayout>
             </LinearLayout>
 
-
-
+            <Button
+                style="@style/scoreButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addFiveForRed"
+                android:text="@string/points5" />
 
             <Button
                 style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+5 Points\n(win round)"
-                android:onClick="addFiveForRed"/>
+                android:onClick="addThreeForRed"
+                android:text="@string/points3" />
 
             <Button
                 style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+3 Points"
-                android:onClick="addThreeForRed"/>
+                android:onClick="addTwoForRed"
+                android:text="@string/points2" />
 
             <Button
-                style="@style/scoreButtons"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="+2 Points"
-                android:onClick="addTwoForRed"/>
-
-            <Button
-                style="@style/scoreButtons"
                 android:id="@+id/onePoint"
+                style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+1 point"
-                android:onClick="addOneForRed"/>
+                android:onClick="addOneForRed"
+                android:text="@string/point1" />
 
             <Button
-                style="@style/scoreButtons"
                 android:id="@+id/admonition"
+                style="@style/scoreButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="admonition"
-                android:onClick="admonitionRed"/>
+                android:onClick="admonitionRed"
+                android:text="@string/admonition" />
 
         </LinearLayout>
 
@@ -299,31 +287,31 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_margin="8dp"
-        android:text="Round end"
-        android:onClick="RoundEnd"/>
+        android:onClick="RoundEnd"
+        android:text="@string/roundEnd" />
 
     <Button
         android:id="@+id/resetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
         android:layout_margin="8dp"
-        android:text="Reset"
-        android:onClick="resetContestation"/>
+        android:onClick="resetContestation"
+        android:text="@string/reset" />
 
     <View
-        android:layout_below="@id/rounds"
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:background="@android:color/darker_gray"
-        android:layout_marginTop="10dp"
+        android:layout_alignBottom="@id/tab"
+        android:layout_below="@id/rounds"
         android:layout_centerHorizontal="true"
-        android:layout_alignBottom ="@id/tab">
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray">
 
     </View>
 
