@@ -14,34 +14,34 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#5644FD"
+            android:background="@color/blue_rounds"
             android:orientation="horizontal"
             android:paddingBottom="8dp"
             android:paddingTop="8dp">
 
             <TextView
-                android:id="@+id/R1Left"
+                android:id="@+id/r1_left"
                 style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/roundSquare1" />
+                android:text="@string/round_square1" />
 
             <TextView
-                android:id="@+id/R2Left"
+                android:id="@+id/r2_left"
                 style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/roundSquare2" />
+                android:text="@string/round_square2" />
 
             <TextView
-                android:id="@+id/R3Left"
+                android:id="@+id/r3_left"
                 style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/roundSquare3" />
+                android:text="@string/round_square3" />
 
         </LinearLayout>
 
@@ -49,34 +49,34 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#FA3F30"
+            android:background="@color/red_rounds"
             android:orientation="horizontal"
             android:paddingBottom="8dp"
             android:paddingTop="8dp">
 
             <TextView
-                android:id="@+id/R1Right"
+                android:id="@+id/r1_right"
                 style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/roundSquare1" />
+                android:text="@string/round_square1" />
 
             <TextView
-                android:id="@+id/R2Right"
+                android:id="@+id/r2_right"
                 style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/roundSquare2" />
+                android:text="@string/round_square2" />
 
             <TextView
-                android:id="@+id/R3Right"
+                android:id="@+id/r3_right"
                 style="@style/rounds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/roundSquare3" />
+                android:text="@string/round_square3" />
 
         </LinearLayout>
 
@@ -90,7 +90,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/leftSide"
+            android:id="@+id/left_side"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -107,18 +107,18 @@
                     android:layout_weight="1">
 
                     <TextView
-                        android:id="@+id/pointsHeaderBlue"
+                        android:id="@+id/points_header_blue"
                         style="@style/headers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/pointsHeader" />
+                        android:text="@string/points_header" />
 
                     <TextView
-                        android:id="@+id/pointsCountBlue"
+                        android:id="@+id/points_count_blue"
                         style="@style/scores"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/pointsHeaderBlue"
+                        android:layout_below="@id/points_header_blue"
                         android:text="0" />
 
                 </RelativeLayout>
@@ -129,20 +129,20 @@
                     android:layout_weight="1">
 
                     <TextView
-                        android:id="@+id/admonitionsHeaderBlue"
+                        android:id="@+id/admonitions_header_blue"
                         style="@style/headers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/pointsHeaderBlue"
-                        android:text="@string/admonitionsHeader"
+                        android:layout_toRightOf="@id/points_header_blue"
+                        android:text="@string/admonitions_header"
                         tools:ignore="NotSibling" />
 
                     <TextView
-                        android:id="@+id/admonitionsCountBlue"
-                        style="@style/admolitions"
+                        android:id="@+id/admonitions_count_blue"
+                        style="@style/admonitions"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/admonitionsHeaderBlue"
+                        android:layout_below="@id/admonitions_header_blue"
                         android:text="0" />
 
                 </RelativeLayout>
@@ -150,35 +150,35 @@
             </LinearLayout>
 
             <Button
-                style="@style/scoreButtons"
+                style="@style/score_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="addFiveForBlue"
                 android:text="@string/points5" />
 
             <Button
-                style="@style/scoreButtons"
+                style="@style/score_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="addThreeForBlue"
                 android:text="@string/points3" />
 
             <Button
-                style="@style/scoreButtons"
+                style="@style/score_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="addTwoForBlue"
                 android:text="@string/points2" />
 
             <Button
-                style="@style/scoreButtons"
+                style="@style/score_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="addOneForBlue"
                 android:text="@string/point1" />
 
             <Button
-                style="@style/scoreButtons"
+                style="@style/score_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="admonitionBlue"
@@ -186,7 +186,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/rightSide"
+            android:id="@+id/right_side"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -203,19 +203,20 @@
                     android:layout_weight="1">
 
                     <TextView
-                        android:id="@+id/pointsHeaderRed"
+                        android:id="@+id/points_header_red"
                         style="@style/headers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/pointsHeader" />
+                        android:text="@string/points_header" />
 
                     <TextView
-                        android:id="@+id/pointsCountRed"
+                        android:id="@+id/points_count_red"
                         style="@style/scores"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/pointsHeaderRed"
-                        android:text="0" />
+                        android:layout_below="@id/points_header_red"
+                        android:text="0"
+                        tools:ignore="NotSibling" />
 
                 </RelativeLayout>
 
@@ -225,48 +226,51 @@
                     android:layout_weight="1">
 
                     <TextView
-                        android:id="@+id/admonitionsHeaderRed"
+                        android:id="@+id/admonitions_header_red"
                         style="@style/headers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/pointsHeaderRed"
-                        android:text="@string/admonitionsHeader"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/admonitions_header"
                         tools:ignore="NotSibling" />
 
                     <TextView
-                        android:id="@+id/admonitionsCountRed"
-                        style="@style/admolitions"
+                        android:id="@+id/admonitions_count_red"
+                        style="@style/admonitions"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/admonitionsHeaderRed"
+                        android:layout_below="@id/admonitions_header_red"
                         android:text="0" />
+
+
                 </RelativeLayout>
             </LinearLayout>
 
             <Button
-                style="@style/scoreButtons"
+                style="@style/score_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="addFiveForRed"
                 android:text="@string/points5" />
 
             <Button
-                style="@style/scoreButtons"
+                style="@style/score_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="addThreeForRed"
                 android:text="@string/points3" />
 
             <Button
-                style="@style/scoreButtons"
+                style="@style/score_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="addTwoForRed"
                 android:text="@string/points2" />
 
             <Button
-                android:id="@+id/onePoint"
-                style="@style/scoreButtons"
+                style="@style/score_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="addOneForRed"
@@ -274,7 +278,7 @@
 
             <Button
                 android:id="@+id/admonition"
-                style="@style/scoreButtons"
+                style="@style/score_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="admonitionRed"
@@ -291,10 +295,10 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="8dp"
         android:onClick="RoundEnd"
-        android:text="@string/roundEnd" />
+        android:text="@string/round_end" />
 
     <Button
-        android:id="@+id/resetButton"
+        android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

@@ -9,25 +9,25 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int zeroPointsFlag = 0; // if round ends with zero points for every wrestler,
+    private int zeroPointsFlag = 0; // if round ends with zero points for every wrestler,
                             // it blocks roundEnd for contestants to wrestle additional time
-    int roundEndEnableFlag = 0; // flag for "turning on" roundEnd function, needed to skip monkey clicks
-    int blockFlag = 0; // flag for all functions except roundEnd blocking, needed to skip monkey clicks
-    int roundNumber = 0;
-    int pointsBlue = 0; // round score for blue wrestler
-    int pointsRed = 0; // round score for red wrestler
-    int admonitionsBlue = 0; // contestation (not round!) admonitions for blue wrestler
-    int admonitionsRed = 0; // contestation (not round!) admonitions for red wrestler
-    int threePointsCounterBlue = 0; // if wrestler gets 2 times 3 points he wins round despite scores
-    int threePointsCounterRed = 0; // so it's counter of 3 scores times in round
-    int roundsWonBlue = 0;
-    int roundsWonRed = 0;
-    int lastScoreBlue = 0; // if score in round and admonitions are equal, winner is the one who got
-    int lastScoreRed = 0; // last point(s) in round
+    private int roundEndEnableFlag = 0; // flag for "turning on" roundEnd function, needed to skip monkey clicks
+    private int blockFlag = 0; // flag for all functions except roundEnd blocking, needed to skip monkey clicks
+    private int roundNumber = 0;
+    private int pointsBlue = 0; // round score for blue wrestler
+    private int pointsRed = 0; // round score for red wrestler
+    private int admonitionsBlue = 0; // contestation (not round!) admonitions for blue wrestler
+    private int admonitionsRed = 0; // contestation (not round!) admonitions for red wrestler
+    private int threePointsCounterBlue = 0; // if wrestler gets 2 times 3 points he wins round despite scores
+    private int threePointsCounterRed = 0; // so it's counter of 3 scores times in round
+    private int roundsWonBlue = 0;
+    private int roundsWonRed = 0;
+    private int lastScoreBlue = 0; // if score in round and admonitions are equal, winner is the one who got
+    private int lastScoreRed = 0; // last point(s) in round
 
     // arrays needed to reset layout
-    private Integer[] roundIdsBlue = {R.id.R1Left, R.id.R2Left, R.id.R3Left};
-    private Integer[] roundIdsRed = {R.id.R1Right, R.id.R2Right, R.id.R3Right};
+    private Integer[] roundIdsBlue = {R.id.r1_left, R.id.r2_left, R.id.r3_left};
+    private Integer[] roundIdsRed = {R.id.r1_right, R.id.r2_right, R.id.r3_right};
 
 
     @Override
@@ -53,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
         lastScoreBlue = 0;
         lastScoreRed = 0;
 
-        displayNumber(pointsBlue, (TextView) findViewById(R.id.pointsCountBlue));
-        displayNumber(pointsRed, (TextView) findViewById(R.id.pointsCountRed));
-        displayNumber(admonitionsBlue, (TextView) findViewById(R.id.admonitionsCountBlue));
-        displayNumber(admonitionsRed, (TextView) findViewById(R.id.admonitionsCountRed));
+        displayNumber(pointsBlue, (TextView) findViewById(R.id.points_count_blue));
+        displayNumber(pointsRed, (TextView) findViewById(R.id.points_count_red));
+        displayNumber(admonitionsBlue, (TextView) findViewById(R.id.admonitions_count_blue));
+        displayNumber(admonitionsRed, (TextView) findViewById(R.id.admonitions_count_red));
 
         for (int i=0; i<3; i++){
             findViewById(roundIdsBlue[i]).setBackgroundResource(R.drawable.rounded_corners_white);
@@ -104,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
             threePointsCounterRed = 0;
             lastScoreBlue = 0;
             lastScoreRed = 0;
-            displayNumber(pointsBlue, (TextView) findViewById(R.id.pointsCountBlue));
-            displayNumber(pointsRed, (TextView) findViewById(R.id.pointsCountRed));
+            displayNumber(pointsBlue, (TextView) findViewById(R.id.points_count_blue));
+            displayNumber(pointsRed, (TextView) findViewById(R.id.points_count_red));
 
             if (roundsWonBlue == 2 | roundsWonRed == 2 | admonitionsBlue == 3 | admonitionsRed == 3) {
                 blockFlag = 1;
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         }
         blockFlag = 1;
         pointsBlue += 5;
-        displayNumber(pointsBlue, (TextView) findViewById(R.id.pointsCountBlue));
+        displayNumber(pointsBlue, (TextView) findViewById(R.id.points_count_blue));
     }
 
     // adds 5 points to score of RED contestant, auto-win round
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
         }
         blockFlag = 1;
         pointsRed += 5;
-        displayNumber(pointsRed, (TextView) findViewById(R.id.pointsCountRed));
+        displayNumber(pointsRed, (TextView) findViewById(R.id.points_count_red));
     }
 
     // adds 3 points to score of BLUE contestant, auto-win round if he gets 3 points 2 times
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         lastScoreBlue = 1;
         lastScoreRed = 0;
         threePointsCounterBlue += 1;
-        displayNumber(pointsBlue, (TextView) findViewById(R.id.pointsCountBlue));
+        displayNumber(pointsBlue, (TextView) findViewById(R.id.points_count_blue));
         if (threePointsCounterBlue == 2 | zeroPointsFlag == 1) {
             blockFlag = 1;
         }
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
         lastScoreRed = 1;
         lastScoreBlue = 0;
         threePointsCounterRed += 1;
-        displayNumber(pointsRed, (TextView) findViewById(R.id.pointsCountRed));
+        displayNumber(pointsRed, (TextView) findViewById(R.id.points_count_red));
         if (threePointsCounterRed == 2 | zeroPointsFlag == 1) {
             blockFlag = 1;
         }
@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
         pointsBlue += 2;
         lastScoreBlue = 1;
         lastScoreRed = 0;
-        displayNumber(pointsBlue, (TextView) findViewById(R.id.pointsCountBlue));
+        displayNumber(pointsBlue, (TextView) findViewById(R.id.points_count_blue));
         if (zeroPointsFlag == 1) {
             blockFlag = 1;
         }
@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
         pointsRed += 2;
         lastScoreRed = 1;
         lastScoreBlue = 0;
-        displayNumber(pointsRed, (TextView) findViewById(R.id.pointsCountRed));
+        displayNumber(pointsRed, (TextView) findViewById(R.id.points_count_red));
         if (zeroPointsFlag == 1) {
             blockFlag = 1;
         }
@@ -238,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
         pointsBlue += 1;
         lastScoreBlue = 1;
         lastScoreRed = 0;
-        displayNumber(pointsBlue, (TextView) findViewById(R.id.pointsCountBlue));
+        displayNumber(pointsBlue, (TextView) findViewById(R.id.points_count_blue));
         if (zeroPointsFlag == 1) {
             blockFlag = 1;
         }
@@ -253,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
         pointsRed += 1;
         lastScoreRed = 1;
         lastScoreBlue = 0;
-        displayNumber(pointsRed, (TextView) findViewById(R.id.pointsCountRed));
+        displayNumber(pointsRed, (TextView) findViewById(R.id.points_count_red));
         if (zeroPointsFlag == 1) {
             blockFlag = 1;
         }
@@ -266,9 +266,10 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         admonitionsBlue += 1;
-        displayNumber(admonitionsBlue, (TextView) findViewById(R.id.admonitionsCountBlue));
+        displayNumber(admonitionsBlue, (TextView) findViewById(R.id.admonitions_count_blue));
         if (admonitionsBlue == 3) {
             contestationToaster("Red");
+            roundColorChange((TextView) findViewById(roundIdsRed[roundNumber]));
             blockFlag = 1;
         }
 
@@ -281,9 +282,10 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         admonitionsRed += 1;
-        displayNumber(admonitionsRed, (TextView) findViewById(R.id.admonitionsCountRed));
+        displayNumber(admonitionsRed, (TextView) findViewById(R.id.admonitions_count_red));
         if (admonitionsRed == 3) {
             contestationToaster("Blue");
+            roundColorChange((TextView) findViewById(roundIdsBlue[roundNumber]));
             blockFlag = 1;
         }
     }

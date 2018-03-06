@@ -1,17 +1,17 @@
 <resources>
     <string name="app_name">Greco-Roman Wrestling</string>
 
-    <string name="roundSquare1">R1</string>
-    <string name="roundSquare2">R2</string>
-    <string name="roundSquare3">R3</string>
-    <string name="pointsHeader"><u>Points</u></string>
-    <string name="admonitionsHeader"><u>Admonitions</u></string>
+    <string name="round_square1">R1</string>
+    <string name="round_square2">R2</string>
+    <string name="round_square3">R3</string>
+    <string name="points_header"><u>Points</u></string>
+    <string name="admonitions_header"><u>Admonitions</u></string>
     <string name="points5">+5 Points\n(win round)</string>
     <string name="points3">+3 Points</string>
     <string name="points2">+2 Points</string>
     <string name="point1">+1 Point1</string>
     <string name="admonition">Admonition</string>
-    <string name="roundEnd">Round end</string>
+    <string name="round_end">Round end</string>
     <string name="reset">Reset</string>
 
 </resources>
